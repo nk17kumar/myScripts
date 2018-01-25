@@ -4,11 +4,13 @@ try:
 	fout = open("/etc/apt/apt.conf",'w')
 except IOError:
 	print "Bro! you can't access it"
+	sys.exit()
 
 try:
 	fin = open("university_proxy.in",'r')
 except IOError:
 	print "university_proxy.in doesnot exist"
+	sys.exit()
 
 if sys.argv[1] == "on":
 	arr = fin.read().split("\n")
